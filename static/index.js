@@ -220,7 +220,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
 
     function getCPS() {
         let cps = _gameScore / ((new Date().getTime() - _gameStartDatetime) / 1000);
-        if (isNaN(cps) || cps === Infinity || _gameStartTime < 2) {
+        if (isNaN(cps) || cps === Infinity || _gameStartTime < 5) {
             cps = 0;
         }
         return cps;
@@ -478,10 +478,10 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             SubmitResults();
         }
 
-        if (cps <= 4) return I18N['text-level-1'];
-        if (cps <= 6.5) return I18N['text-level-2'];
+        if (cps <= 5) return I18N['text-level-1'];
+        if (cps <= 7) return I18N['text-level-2'];
         if (cps <= 7.5)  return I18N['text-level-3'];
-        if (cps <= 15) return I18N['text-level-4'];
+        if (cps <= 10) return I18N['text-level-4'];
         return I18N['text-level-5'];
     }
 
